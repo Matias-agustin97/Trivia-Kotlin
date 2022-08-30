@@ -40,7 +40,10 @@ class TitleFragment : Fragment() {
             //Estamos diciendo, que esta view, en este caso playbutton, cuando se haga click que encuentre el navControoler y navege al fragmento de juego
             //Fijate el id, cuando arrastramos un fragmento a otro creamos una accion y esta accion tiene un id entre cosas
             //pasale ese id al navController y de ahi es historia papu (?
-            view.findNavController().navigate(R.id.action_titleFragment_to_gameFragment)
+            //view.findNavController().navigate(R.id.action_titleFragment_to_gameFragment)
+            //The only real use is for passing args safely between fragments
+            view.findNavController().navigate(TitleFragmentDirections.actionTitleFragmentToGameFragment())
+
         }
 
         //This fragment has an options menu

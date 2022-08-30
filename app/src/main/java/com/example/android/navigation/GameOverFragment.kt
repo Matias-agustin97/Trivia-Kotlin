@@ -33,7 +33,11 @@ class GameOverFragment : Fragment() {
                 inflater, R.layout.fragment_game_over, container, false)
 
         binding.tryAgainButton.setOnClickListener{view: View ->
-            view.findNavController().navigate(R.id.action_gameOverFragment_to_gameFragment)
+           // view.findNavController().navigate(R.id.action_gameOverFragment_to_gameFragment)
+            //This is the same but we are replacing the actions with the navDirection classes
+            //The only real use is for passing args safely between fragments
+            view.findNavController()
+                .navigate(GameOverFragmentDirections.actionGameOverFragmentToGameFragment())
         }
 
         return binding.root
